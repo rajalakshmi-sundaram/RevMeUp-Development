@@ -72,7 +72,10 @@ public class LoginActivity extends AppCompatActivity {
                                         Toast.makeText(LoginActivity.this,"Registered Successfully",Toast.LENGTH_SHORT).show();
                                         startActivity(new Intent(LoginActivity.this, HomeActivity.class));
                                     }
-                                    Toast.makeText(LoginActivity.this,"In else part",Toast.LENGTH_SHORT).show();
+                                    task.getException().printStackTrace();
+
+
+                                    Toast.makeText(LoginActivity.this,"In else part"+task.getException().getMessage(),Toast.LENGTH_SHORT).show();
                                     startActivity(new Intent(LoginActivity.this, HomeActivity.class));
                                 }
                             });
