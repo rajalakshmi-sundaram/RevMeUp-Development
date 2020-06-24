@@ -79,7 +79,7 @@ public class SignUpActivity extends AppCompatActivity {
 
                 else if(!(email.isEmpty() && password.isEmpty()))
                 {
-                    mFirebaseAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(SignUpActivity.this,
+                    mFirebaseAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(SignUpActivity.this,
                             new OnCompleteListener<AuthResult>() {
                                 @Override
                                 public void onComplete(@NonNull Task<AuthResult> task) {

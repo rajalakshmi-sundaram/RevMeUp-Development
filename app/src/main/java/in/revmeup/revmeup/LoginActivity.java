@@ -25,8 +25,8 @@ public class LoginActivity extends AppCompatActivity {
     FirebaseAuth mFirebaseAuth=FirebaseAuth.getInstance();
     EditText eid, pwd;
     Button loginButton;
-    Button signupButton;
 
+    private static final String TAG = "LoginActivity";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,9 +41,10 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 final String email = eid.getText().toString();
-                String password = pwd.getText().toString();
+                final String password = pwd.getText().toString();
 
-                if(email.isEmpty())
+                startActivity(new Intent(LoginActivity.this, HomeActivity.class));
+                 if(email.isEmpty())
                 {
                     eid.setError("Enter username or email");
                     eid.requestFocus();
@@ -64,19 +65,18 @@ public class LoginActivity extends AppCompatActivity {
                 {
 
                     Toast.makeText(LoginActivity.this,"Registered Successfully "+email,Toast.LENGTH_SHORT).show();
-                    mFirebaseAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(LoginActivity.this,
+                    mFirebaseAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(LoginActivity.this,
                             new OnCompleteListener<AuthResult>() {
+
                                 @Override
                                 public void onComplete(@NonNull Task<AuthResult> task) {
+
                                     if(task.isSuccessful()){
+
                                         Toast.makeText(LoginActivity.this,"Registered Successfully",Toast.LENGTH_SHORT).show();
                                         startActivity(new Intent(LoginActivity.this, HomeActivity.class));
                                     }
-                                    task.getException().printStackTrace();
 
-
-                                    Toast.makeText(LoginActivity.this,"In else part"+task.getException().getMessage(),Toast.LENGTH_SHORT).show();
-                                    startActivity(new Intent(LoginActivity.this, HomeActivity.class));
                                 }
                             });
                 }
