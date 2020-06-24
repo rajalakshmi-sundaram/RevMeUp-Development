@@ -6,6 +6,7 @@ import android.os.Bundle;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
+import android.os.Handler;
 import android.view.View;
 
 import androidx.core.view.GravityCompat;
@@ -21,16 +22,31 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.view.Menu;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+    private static int SPLASH_SCREEN_TIME_OUT=2000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        /*getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        //This method is used so that your splash activity
+        //can cover the entire screen.*/
         setContentView(R.layout.activity_main);
+        /* new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                Intent i=new Intent(MainActivity.this,
+                        SecondActivity.class);
+                startActivity(i);
+                finish();
+            }
+        }, SPLASH_SCREEN_TIME_OUT);*/
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         FloatingActionButton fab = findViewById(R.id.fab);
