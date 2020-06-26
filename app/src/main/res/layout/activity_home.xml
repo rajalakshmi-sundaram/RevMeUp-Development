@@ -19,4 +19,83 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/gotoFeed"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="364dp"
+        android:layout_marginEnd="307dp"
+        android:layout_marginBottom="29dp"
+        android:text="@string/gotoFeed"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/homepagetext"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/gotoRewards"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="364dp"
+        android:layout_marginEnd="252dp"
+        android:layout_marginBottom="32dp"
+        android:text="@string/gotoRewards"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.363"
+        app:layout_constraintStart_toEndOf="@+id/gotoFeed"
+        app:layout_constraintTop_toBottomOf="@+id/homepagetext"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/plusButton"
+        android:layout_width="60dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="364dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="25dp"
+        android:text="@string/plusButton"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/gotoMessages"
+        app:layout_constraintStart_toEndOf="@+id/gotoRewards"
+        app:layout_constraintTop_toBottomOf="@+id/homepagetext" />
+
+    <Button
+        android:id="@+id/gotoMessages"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="61dp"
+        android:layout_marginTop="364dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="21dp"
+        android:text="@string/gotoMessages"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/gotoStalkList"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/gotoRewards"
+        app:layout_constraintTop_toBottomOf="@+id/homepagetext" />
+
+    <Button
+        android:id="@+id/gotoStalkList"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="164dp"
+        android:layout_marginTop="364dp"
+        android:layout_marginBottom="23dp"
+        android:text="@string/gotoStalkList"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/plusButton"
+        app:layout_constraintHorizontal_bias="0.608"
+        app:layout_constraintStart_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/homepagetext"
+        app:layout_constraintVertical_bias="0.571" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

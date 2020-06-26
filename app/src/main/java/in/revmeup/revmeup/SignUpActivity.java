@@ -17,7 +17,7 @@ import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-
+//test3
 public class SignUpActivity extends AppCompatActivity {
     private FirebaseAuth.AuthStateListener mAuthStateListener;
     FirebaseAuth mFirebaseAuth=FirebaseAuth.getInstance();
@@ -30,12 +30,13 @@ public class SignUpActivity extends AppCompatActivity {
 
         final EditText eid, pwd;
         Button signupButton;
-        Button loginButton;
+        final Button homepageButton;
 
         mFirebaseAuth = FirebaseAuth.getInstance();
         eid = findViewById(R.id.enter_username_or_email);
         pwd = findViewById(R.id.enter_password);
         signupButton =(Button) findViewById(R.id.sign_up);
+        homepageButton = findViewById(R.id.sign_up);
 
 
         mAuthStateListener = new FirebaseAuth.AuthStateListener() {
@@ -92,7 +93,15 @@ public class SignUpActivity extends AppCompatActivity {
                                     task.getException().getMessage();
                                 }
                             });
+                    homepageButton.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            openHomepage();
+                        }
+                    });
+
                 }
+
 
                 else{
                     Toast.makeText(SignUpActivity.this, "Error occurred. Try again", Toast.LENGTH_SHORT);
@@ -104,6 +113,12 @@ public class SignUpActivity extends AppCompatActivity {
         Intent intToHome = new Intent(this, HomeActivity.class);
         startActivity(intToHome);
     }
+
+    public void openHomepage(){
+        Intent intent=new Intent(this,HomeActivity.class);
+        startActivity(intent);
+    }
+
     @Override
     protected void onStart() {
         super.onStart();

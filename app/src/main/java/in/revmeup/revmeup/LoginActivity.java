@@ -26,6 +26,7 @@ public class LoginActivity extends AppCompatActivity {
     EditText eid, pwd;
     Button loginButton;
     Button signupButton;
+    Button homepageButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +38,7 @@ public class LoginActivity extends AppCompatActivity {
         pwd = (EditText) findViewById(R.id.enter_password);
 
         loginButton = (Button) findViewById(R.id.log_in);
+        homepageButton = findViewById(R.id.sign_up);
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -79,6 +81,12 @@ public class LoginActivity extends AppCompatActivity {
                                     startActivity(new Intent(LoginActivity.this, HomeActivity.class));
                                 }
                             });
+                    homepageButton.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            openHomepage();
+                        }
+                });
                 }
 
                 else{
@@ -87,5 +95,9 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
     }
+        public void openHomepage(){
+            Intent intent=new Intent(LoginActivity.this,HomeActivity.class);
+            startActivity(intent);
+        }
 
 }

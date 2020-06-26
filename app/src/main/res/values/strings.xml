@@ -20,4 +20,15 @@
     <string name="enter_username_or_email">Enter username or email</string>
     <string name="enter_password">Enter password</string>
     <string name="home_page_text">Home Page</string>
+    <string name="title_activity_f_messages">FMessagesActivity</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+    <string name="messages_header">Messages</string>
+    <string name="gotoFeed">Feed</string>
+    <string name="gotoRewards">Rewards</string>
+    <string name="gotoMessages">Message</string>
+    <string name="gotoStalkList">Stalk List</string>
+    <string name="plusButton">+</string>
+    <string name="followersHeader">Followers</string>
+    <string name="verifiedHeader">Verified</string>
 </resources>
