@@ -1,4 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!--Other string resources also defined in this file… -->
+    <string name="producttype1">Appliances and Electronics</string>
+    <string name="producttype2">Beauty and personal care</string>
+    <string name="producttype3">New and innovative products</string>
+    <string name="producttype4">Sports and fitness</string>
+
     <string name="app_name">RevMeUp</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -20,4 +27,7 @@
     <string name="enter_username_or_email">Enter username or email</string>
     <string name="enter_password">Enter password</string>
     <string name="home_page_text">Home Page</string>
+    <string name="Name">Name</string>
+    <string name="Email">Email</string>
+
 </resources>

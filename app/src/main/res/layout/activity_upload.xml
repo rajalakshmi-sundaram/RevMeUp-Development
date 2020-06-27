@@ -1,34 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:padding="16dp"
-    tools:context=".UploadActivity"
-    android:layout_height="match_parent">
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ScrollView01"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:scrollbars="vertical">
+
     <LinearLayout
-        android:id="@+id/layout_button"
-        android:orientation="horizontal"
-        android:layout_alignParentTop="true"
-        android:weightSum="2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical">
 
-        <Button
-            android:id="@+id/btnChoose"
+        <TextView
+            android:id="@+id/TextViewTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="PRODUCT DETAILS"
+            android:textColor="#E91E63"
+            android:textSize="10pt"
+            android:textStyle="bold"></TextView>
+        <TextView
+            android:id="@+id/empty"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text=""
+            android:textSize="10pt"></TextView>
+
+        <EditText
+            android:id="@+id/Name"
+            android:layout_width="411dp"
+            android:layout_height="match_parent"
+            android:hint="Product Name"
+            android:inputType="textPersonName"></EditText>
+
+        <EditText
+            android:id="@+id/ID"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="Product ID"
+            android:inputType="textPersonName"></EditText>
+
+        <EditText
+            android:id="@+id/Price"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="Price"
+            android:inputType="textPersonName"></EditText>
+        <EditText
+            android:id="@+id/EditTextEmail"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="@string/Email"
+            android:inputType="textEmailAddress"></EditText>
+
+        <Spinner
+            android:id="@+id/SpinnerFeedbackType"
+            android:layout_width="match_parent"
+            android:layout_height="59dp"
+            android:entries="@array/producttypelist"></Spinner>
+        <TextView
+            android:id="@+id/Image"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Upload Picture(optional)"
+            android:textSize="10pt"></TextView>
+            <Button
+            android:id="@+id/ch"
+            android:layout_width="152dp"
+            android:layout_height="match_parent"
             android:text="Choose"
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content" />
+            android:textSize="12sp"></Button>
 
         <Button
-            android:id="@+id/btnUpload"
+            android:id="@+id/up"
+            android:layout_width="152dp"
+            android:layout_height="match_parent"
             android:text="Upload"
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content" />
+            android:textSize="12sp"></Button>
+
+        <EditText
+            android:id="@+id/fname"
+            android:layout_width="match_parent"
+            android:layout_height="201dp"
+            android:hint="                          Comments" />
+
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="POST!" />
     </LinearLayout>
-    <ImageView
-        android:id="@+id/imgView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-</RelativeLayout>
+
+
+
+</ScrollView>

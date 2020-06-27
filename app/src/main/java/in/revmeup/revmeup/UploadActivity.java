@@ -32,14 +32,14 @@ public class UploadActivity extends AppCompatActivity {
     private Uri filePath;
 
     private final int PICK_IMAGE_REQUEST = 71;
-    FirebaseStorage storage=FirebaseStorage.getInstance();;
-    StorageReference storageReference = storage.getReference();
+   // FirebaseStorage storage=FirebaseStorage.getInstance();;
+    //StorageReference storageReference = storage.getReference();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_upload);
-        btnChoose = (Button) findViewById(R.id.btnChoose);
+        /*btnChoose = (Button) findViewById(R.id.btnChoose);
         btnUpload = (Button) findViewById(R.id.btnUpload);
         imageView = (ImageView) findViewById(R.id.imgView);
         btnChoose.setOnClickListener(new View.OnClickListener() {
@@ -111,6 +111,6 @@ public class UploadActivity extends AppCompatActivity {
                             progressDialog.setMessage("Uploaded "+(int)progress+"%");
                         }
                     });
-        }
+        }*/
     }
 }
