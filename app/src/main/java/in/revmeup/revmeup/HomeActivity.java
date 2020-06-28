@@ -14,18 +14,28 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class HomeActivity extends AppCompatActivity {
     FloatingActionButton post;
+    FloatingActionButton message;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-         post = (FloatingActionButton) findViewById(R.id.floatingActionButton2);
-         post.setOnClickListener(new View.OnClickListener() {
+        post = (FloatingActionButton) findViewById(R.id.floatingActionButton2);
+        post.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(HomeActivity.this, activity_post.class));
             }
-          });
+        });
+        message = (FloatingActionButton) findViewById(R.id.floatingActionButton4);
+        message.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(HomeActivity.this, FMessagesActivity.class));
+            }
+        });
+
     }
 }
 
