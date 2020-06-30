@@ -9,20 +9,18 @@ import android.widget.Button;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-public class activity_post extends AppCompatActivity {
-
-    Button next;
+public class ProductsActivity extends AppCompatActivity {
+FloatingActionButton create;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_post);
-        next = (Button) findViewById(R.id.button3);
-        next.setOnClickListener(new View.OnClickListener() {
+        setContentView(R.layout.activity_products);
+        create = (FloatingActionButton) findViewById(R.id.floatingActionButton3);
+        create.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //(new Intent(activity_post.this, UploadActivity.class));
+                startActivity(new Intent(ProductsActivity.this, UploadActivity.class));
             }
         });
-
     }
 }

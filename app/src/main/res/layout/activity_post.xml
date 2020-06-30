@@ -6,56 +6,22 @@
     android:layout_height="match_parent"
     tools:context=".activity_post">
 
-    <RadioButton
-        android:id="@+id/radioButton"
-        android:layout_width="408dp"
-        android:layout_height="36dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="21dp"
-        android:layout_marginBottom="5dp"
-        android:foregroundTint="#E91E63"
-        android:text="Earn 50 revcoins: Upload basic product description"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toTopOf="@+id/radioButton2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView7" />
-
-    <RadioButton
-        android:id="@+id/radioButton2"
-        android:layout_width="0dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginBottom="20dp"
-        android:text="Earn 200 revcoins: Upload the description and your selfie with the product"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toTopOf="@+id/button2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radioButton" />
-
     <EditText
         android:id="@+id/editTextTextPersonName"
         android:layout_width="311dp"
         android:layout_height="47dp"
         android:layout_marginStart="38dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="36dp"
         android:layout_marginEnd="39dp"
-        android:layout_marginBottom="70dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Product"
         android:textColor="#E91E63"
         android:textColorHint="#E91E63"
-        app:layout_constraintBottom_toTopOf="@+id/textView7"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.347"
+        app:layout_constraintHorizontal_bias="0.304"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toBottomOf="@+id/button" />
 
     <ImageView
         android:id="@+id/imageView2"
@@ -74,13 +40,13 @@
 
     <TextView
         android:id="@+id/textView4"
-        android:layout_width="192dp"
-        android:layout_height="38dp"
+        android:layout_width="204dp"
+        android:layout_height="37dp"
         android:layout_marginStart="38dp"
         android:layout_marginTop="12dp"
         android:layout_marginEnd="151dp"
         android:layout_marginBottom="13dp"
-        android:text="What will you sell?"
+        android:text="Advertise."
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/textView5"
@@ -133,32 +99,12 @@
         android:id="@+id/button3"
         android:layout_width="114dp"
         android:layout_height="59dp"
-        android:layout_marginTop="20dp"
         android:layout_marginEnd="56dp"
         android:layout_marginBottom="51dp"
         android:backgroundTint="#E91E63"
         android:text="NEXT"
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radioButton2"
-        app:layout_constraintVertical_bias="1.0" />
-
-    <TextView
-        android:id="@+id/textView7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="129dp"
-        android:layout_marginEnd="3dp"
-        android:layout_marginBottom="21dp"
-        android:text="Select type of product description you want to share:"
-        android:textSize="15sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/radioButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.039"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -13,6 +13,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 
 public class HomeActivity extends AppCompatActivity {
+    FloatingActionButton prod;
     FloatingActionButton post;
     FloatingActionButton message;
 
@@ -20,7 +21,13 @@ public class HomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-
+        prod = (FloatingActionButton) findViewById(R.id.floatingActionButton);
+        prod.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(HomeActivity.this, ProductsActivity.class));
+            }
+        });
         post = (FloatingActionButton) findViewById(R.id.floatingActionButton2);
         post.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -17,12 +17,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".UploadActivity"></activity>
+        <activity android:name=".ProductsActivity"></activity>
+        <activity android:name=".UploadActivity" />
         <activity android:name=".activity_post" />
         <activity
             android:name=".FMessagesActivity"
             android:label="@string/title_activity_f_messages"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".SignUpActivity" />
         <activity android:name=".HomeActivity" />
         <activity android:name=".LoginActivity" />
