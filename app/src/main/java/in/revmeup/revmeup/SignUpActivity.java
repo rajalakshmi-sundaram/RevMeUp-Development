@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -26,7 +27,7 @@ public class SignUpActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
-        final FirebaseAuth mFirebaseAuth;
+
         final EditText eid, pwd;
         Button signupButton;
         Button loginButton;
@@ -34,8 +35,8 @@ public class SignUpActivity extends AppCompatActivity {
         mFirebaseAuth = FirebaseAuth.getInstance();
         eid = findViewById(R.id.enter_username_or_email);
         pwd = findViewById(R.id.enter_password);
-        signupButton = findViewById(R.id.sign_up_button);
-        loginButton = findViewById(R.id.log_in_button);
+        signupButton =(Button) findViewById(R.id.sign_up);
+
 
         mAuthStateListener = new FirebaseAuth.AuthStateListener() {
             @Override
@@ -54,7 +55,7 @@ public class SignUpActivity extends AppCompatActivity {
 
         signupButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(final View v) {
 
                 String email = eid.getText().toString();
                 String password = pwd.getText().toString();
@@ -78,17 +79,17 @@ public class SignUpActivity extends AppCompatActivity {
 
                 else if(!(email.isEmpty() && password.isEmpty()))
                 {
-                    mFirebaseAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(SignUpActivity.this,
+                    mFirebaseAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(SignUpActivity.this,
                             new OnCompleteListener<AuthResult>() {
                                 @Override
                                 public void onComplete(@NonNull Task<AuthResult> task) {
-                                    if(!task.isSuccessful()){
-                                        Toast.makeText(SignUpActivity.this, "Sign up error. Please try again", Toast.LENGTH_SHORT);
+                                    if(task.isSuccessful()){
+                                        Snackbar.make(v, "Success", Snackbar.LENGTH_LONG)
+                                                .setAction("Action", null).show();
+                                        success();
                                     }
-                                    else{
-                                        Intent intToHome = new Intent(SignUpActivity.this, HomeActivity.class);
-                                        startActivity(intToHome);
-                                    }
+                                    task.getException().printStackTrace();
+                                    task.getException().getMessage();
                                 }
                             });
                 }
@@ -98,16 +99,11 @@ public class SignUpActivity extends AppCompatActivity {
                 }
             }
         });
-
-        loginButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intToLogin = new Intent(SignUpActivity.this, LoginActivity.class);
-                startActivity(intToLogin);
-            }
-        });
     }
-
+    public void success() {
+        Intent intToHome = new Intent(this, HomeActivity.class);
+        startActivity(intToHome);
+    }
     @Override
     protected void onStart() {
         super.onStart();

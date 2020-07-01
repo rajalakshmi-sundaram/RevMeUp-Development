@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="producttypelist">
+        <item>@string/producttype1</item>
+        <item>@string/producttype2</item>
+        <item>@string/producttype3</item>
+        <item>@string/producttype4</item>
+    </string-array>
+</resources>
