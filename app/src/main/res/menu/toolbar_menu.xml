@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:title="search_btn"
+        android:id="@+id/search_btn"
+        app:showAsAction="always"
+        android:icon="@drawable/ic_baseline_search_24"
+        />
+    <item
+        android:title="notification_btn"
+        android:id="@+id/notification_btn"
+        app:showAsAction="always"
+        android:icon="@drawable/ic_baseline_notifications_24"
+    />
+</menu>
