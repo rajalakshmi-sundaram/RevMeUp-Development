@@ -38,4 +38,8 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="followersHeader">Followers</string>
     <string name="verifiedHeader">Verified</string>
+    <string name="table_layout_4_open">Name</string>
+    <string name="table_layout_4_open_shortcut">text</string>
+    <string name="table_layout_4_save">text</string>
+    <string name="table_layout_4_save_shortcut">text</string>
 </resources>
