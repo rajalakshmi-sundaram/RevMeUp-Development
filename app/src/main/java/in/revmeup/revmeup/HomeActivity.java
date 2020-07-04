@@ -1,14 +1,18 @@
 package in.revmeup.revmeup;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.MenuItemCompat;
 
 import com.bumptech.glide.Glide;
 
@@ -32,6 +36,20 @@ public class HomeActivity extends AppCompatActivity {
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+    }
+
+    void openFMessages(){
+        Intent i = new Intent(this, FMessagesActivity.class);
+        startActivity(i);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.toolbar_menu,menu);
+
+        MenuItem menuItem = menu.findItem(R.id.profile_btn);
+        View view = MenuItemCompat.getActionView(menuItem);
+
         CircleImageView profileimg = findViewById(R.id.toolbar_profile_img);
         Glide
                 .with(this)
@@ -44,10 +62,21 @@ public class HomeActivity extends AppCompatActivity {
                 Toast.makeText(HomeActivity.this, "Profile Image Clicked", Toast.LENGTH_SHORT).show();
             }
         });
+
+        return super.onCreateOptionsMenu(menu);
     }
 
-    void openFMessages(){
-        Intent i = new Intent(this, FMessagesActivity.class);
-        startActivity(i);
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.search_btn:
+                Toast.makeText(HomeActivity.this, "Search button clicked", Toast.LENGTH_SHORT).show();
+                break;
+
+            case R.id.notification_btn:
+                Toast.makeText(HomeActivity.this, "Notification button clicked", Toast.LENGTH_SHORT).show();
+                break;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

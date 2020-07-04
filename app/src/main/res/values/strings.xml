@@ -31,4 +31,7 @@
     <string name="plusButton">+</string>
     <string name="followersHeader">Followers</string>
     <string name="verifiedHeader">Verified</string>
+    <string name="profile_btn">Profile Button</string>
+    <string name="notification_btn">Notification Button</string>
+    <string name="search_btn">Search Button</string>
 </resources>
