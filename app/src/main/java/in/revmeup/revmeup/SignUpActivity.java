@@ -21,7 +21,7 @@ import com.google.firebase.auth.FirebaseUser;
 public class SignUpActivity extends AppCompatActivity {
     private FirebaseAuth.AuthStateListener mAuthStateListener;
     FirebaseAuth mFirebaseAuth=FirebaseAuth.getInstance();
-
+    Button signupButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,8 +29,8 @@ public class SignUpActivity extends AppCompatActivity {
         setContentView(R.layout.activity_sign_up);
 
         final EditText eid, pwd;
-        Button signupButton;
-        Button loginButton;
+
+
 
         mFirebaseAuth = FirebaseAuth.getInstance();
         eid = findViewById(R.id.enter_username_or_email);

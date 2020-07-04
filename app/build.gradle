@@ -36,11 +36,11 @@ dependencies {
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
     implementation 'com.google.firebase:firebase-analytics:17.2.2'
-    compile 'com.google.firebase:firebase-storage:9.2.1'
+    implementation 'com.google.firebase:firebase-storage:9.2.1'
     implementation 'com.google.firebase:firebase-auth:19.3.1'
     implementation 'com.google.firebase:firebase-inappmessaging-display:19.0.7'
     implementation 'com.google.firebase:firebase-analytics:17.4.3'
+    implementation 'com.google.firebase:firebase-database:19.3.1'
 
 }
-
 apply plugin: 'com.google.gms.google-services'
