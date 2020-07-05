@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:title="@string/search_btn"
+        android:id="@+id/search_btn"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/ic_baseline_search_24"
+        />
+    <item
+        android:title="@string/notification_btn"
+        android:id="@+id/notification_btn"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/ic_baseline_notifications_24"
+        />
+    <item
+        android:title="@string/profile_btn"
+        android:id="@+id/profile_btn"
+        app:showAsAction="ifRoom"
+        android:actionLayout="@layout/profile_menu_layout"
+        />
+</menu>

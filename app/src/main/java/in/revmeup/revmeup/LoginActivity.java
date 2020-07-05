@@ -31,7 +31,7 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        final ProgressDialog progressDialog = new ProgressDialog(this);
+        //final ProgressDialog progressDialog = new ProgressDialog(this);
         mFirebaseAuth = FirebaseAuth.getInstance();
         eid = (EditText) findViewById(R.id.enter_username_or_email);
         pwd = (EditText) findViewById(R.id.enter_password);
