@@ -1,0 +1,134 @@
+{
+  "products": [
+   {
+    "category" : "electronics",
+    "subcategory" : "mobiles",
+    "description" : "13MP primary camera and 5MP front facing camera 13.208 centimeters (5.2-inch) IPS capacitive touchscreen with 1280 x 720 pixels resolution Android v6.0.1 Marshmallow operating system with 1.2GHz MediaTek MT6737 64-bit quad core processor, 3GB RAM, 32GB internal memory expandable up to 32GB and dual SIM dual-standby (4G+4G) 4130mAH lithium-polymer battery",
+    "rating" : "4",
+    "product_id" : "asus1",
+    "product_name" : "asus zenfone 3 max zc520tl-4h122in (grey, 32gb)",
+    "brand_name" : "asus",
+    "photos": ["https://images-na.ssl-images-amazon.com/images/I/71AKCgh84nL._SL1500_.jpg","https://images-na.ssl-images-amazon.com/images/I/71T0eELnSWL._SL1500_.jpg","https://images-na.ssl-images-amazon.com/images/I/61mA86On6VL._SL1348_.jpg","https://images-na.ssl-images-amazon.com/images/I/41Cy6%2BlDdSL._SL1000_.jpg","https://images-na.ssl-images-amazon.com/images/I/61h0tLV8rIL._SL1500_.jpg"],
+    "store" : [ {
+      "storeId" : "amazon",
+      "storeLink" : "https://www.amazon.in/Asus-Zenfone-ZC520TL-4H122IN-Grey-32GB/dp/B01MDRMQL7/ref=sr_1_1?dchild=1&fst=as%3Aoff&qid=1589212448&refinements=p_89%3AASUS%2Cp_n_condition-type%3A8609960031&rnid=1389401031&s=electronics&sr=1-1",
+      "storeName" : "amazon",
+      "storePrice" : "13990"
+    }, {
+      "storeId" : "flipkart",
+      "storeLink" : "https://www.flipkart.com/asus-zenfone-3-max-silver-32-gb/p/itmentefdtza7vaj?pid=MOBENTECQUJQZHHY&lid=LSTMOBENTECQUJQZHHYCGRGVI&marketplace=FLIPKART&srno=s_1_22&otracker=AS_QueryStore_OrganicAutoSuggest_1_4_na_na_na&otracker1=AS_QueryStore_OrganicAutoSuggest_1_4_na_na_na&fm=SEARCH&iid=723ffcae-d800-4b96-85c4-5108e58ff28a.MOBENTECQUJQZHHY.SEARCH&ppt=sp&ppn=sp&ssid=klymkk45gw0000001589213164006&qH=588c0bb7f1928a48",
+      "storeName" : "flipkart",
+      "storePrice" : "13999"
+    } ]
+  },
+
+  {
+    "category" : "electronics",
+    "subcategory" : "mobiles",
+    "description" : "16MP+5MP dual rear camera with f/2.0, PDAF + bokeh, f2.4, 1.12 micrometer, stock, HDR, landscape, sports, flowers, backlight, candle light, sunset, night, beach, snow | 16MP front camera 15.2146 centimeters (5.99-inch) Full HD+ multi-touch capacitive touchscreen with 2160 x 1080 pixels resolution Memory, Storage and SIM: 4GB RAM | 64GB internal memory expandable up to 256GB | Dual SIM (nano+nano) dual-standby (4G+4G) Android Oreo v8.1 operating system with 1.8GHz Qualcomm Snapdragon 636 octa core processor 5000mAH lithium-polymer battery",
+    "rating" : "4",
+    "product_id" : "asus2",
+    "product_name" : "asus zenfone max pro m1 (grey, 4gb ram, 64gb storage)",
+    "brand_name" : "asus",
+    "photos": ["https://images-na.ssl-images-amazon.com/images/I/51t2bFUXw2L.jpg","https://images-na.ssl-images-amazon.com/images/I/314bTa-rXEL.jpg","https://images-na.ssl-images-amazon.com/images/I/41zN1WQs1gL.jpg","https://images-na.ssl-images-amazon.com/images/I/31XUdnms1YL.jpg","https://images-na.ssl-images-amazon.com/images/I/41i5lE-iskL.jpg"],
+    "store" : [ {
+      "storeId" : "amazon",
+      "storeLink" : "https://www.amazon.in/Asus-Zenfone-Max-Pro-M1/dp/B07K5Q3GVS/ref=sr_1_2?dchild=1&fst=as%3Aoff&qid=1589212448&refinements=p_89%3AASUS%2Cp_n_condition-type%3A8609960031&rnid=1389401031&s=electronics&sr=1-2",
+      "storeName" : "amazon",
+      "storePrice" : "8499"
+    }, {
+      "storeId" : "flipkart",
+      "storeLink" : "https://www.flipkart.com/asus-zenfone-max-pro-m1-blue-64-gb/p/itmf7gcrdmjh97cv?pid=MOBF7GCRGR2S78XN&lid=LSTMOBF7GCRGR2S78XNEDS7JS&marketplace=FLIPKART&srno=s_1_1&otracker=AS_QueryStore_OrganicAutoSuggest_1_4_na_na_na&otracker1=AS_QueryStore_OrganicAutoSuggest_1_4_na_na_na&fm=SEARCH&iid=723ffcae-d800-4b96-85c4-5108e58ff28a.MOBF7GCRGR2S78XN.SEARCH&ppt=sp&ppn=sp&ssid=klymkk45gw0000001589213164006&qH=588c0bb7f1928a48",
+      "storeName" : "flipkart",
+      "storePrice" : "8499"
+    } ]
+  },
+
+  {
+    "category" : "electronics",
+    "subcategory" : "mobiles",
+    "description" : "16MP primary camera and 24MP+ 5MP front facing camera 13.97 centimeters (5.5-inch) FHD AMOLED capacitive touchscreen with 1920 x 1080 pixels resolution, 400.5 ppi pixel density Android v7 Nougat with Zen UI 4.0 operating system (Upgradable to v8 Oreo) with 2GHz Qualcomm Snapdragon 625 octa core processor, Adreno 506 GPU, 4GB RAM, 64GB internal memory expandable up to 2TB and dual SIM dual-standby (4G+4G) 3000mAH lithium-ion battery",
+    "rating" : "3",
+    "product_id" : "asus3",
+    "product_name" : "asus zenfone 4 selfie pro (gold)",
+    "brand_name" : "asus",
+    "photos": ["https://images-na.ssl-images-amazon.com/images/I/71dmLlv7A9L._SL1500_.jpg","https://images-na.ssl-images-amazon.com/images/I/916G0Y830oL._SL1500_.jpg","https://images-na.ssl-images-amazon.com/images/I/71mAuSKrJVL._SL1500_.jpg","https://images-na.ssl-images-amazon.com/images/I/51t7q5dVGkL._SL1500_.jpg","https://images-na.ssl-images-amazon.com/images/I/81kVwFtKKnL._SL1500_.jpg"],
+    "store" : [ {
+      "storeId" : "amazon",
+      "storeLink" : "https://www.amazon.in/Asus-Zenfone-Selfie-Pro-Gold/dp/B07D7YCF69/ref=sr_1_5?dchild=1&fst=as%3Aoff&qid=1589212448&refinements=p_89%3AASUS%2Cp_n_condition-type%3A8609960031&rnid=1389401031&s=electronics&sr=1-5",
+      "storeName" : "amazon",
+      "storePrice" : "25999"
+    }, {
+      "storeId" : "flipkart",
+      "storeLink" : "https://www.flipkart.com/asus-zenfone-4-selfie-pro-gold-64-gb/p/itmewpzfhjxk5h6w?pid=MOBEWPZFZ2M6QEVU&lid=LSTMOBEWPZFZ2M6QEVUPOCAXR&marketplace=FLIPKART&srno=s_2_25&otracker=AS_QueryStore_OrganicAutoSuggest_1_4_na_na_na&otracker1=AS_QueryStore_OrganicAutoSuggest_1_4_na_na_na&fm=SEARCH&iid=10fa2420-6525-4bf0-8b68-a6f531d5fa91.MOBEWPZFZ2M6QEVU.SEARCH&ppt=sp&ppn=sp&qH=588c0bb7f1928a48",
+      "storeName" : "flipkart",
+      "storePrice" : "25999"
+    } ]
+  },
+
+  {
+    "category" : "electronics",
+    "subcategory" : "mobiles",
+    "description" : "3 GB RAM | 32 GB ROM | Expandable Upto 256 GB 13.84 cm (5.45 inch) HD+ Display 13MP Rear Camera | 8MP Front Camera 4000 mAh Battery Qualcomm Snapdragon 430 Processor",
+    "rating" : "4",
+    "product_id" : "asus4",
+    "product_name" : "asus zenfone max m1",
+    "brand_name" : "asus",
+    "photos": ["https://rukminim1.flixcart.com/image/416/416/jnc2bgw0/mobile/3/y/z/asus-zenfone-max-m1-zb556kl-4a001in-original-imafafe35r5xw8rx.jpeg?q=70","https://rukminim1.flixcart.com/image/416/416/jnc2bgw0/mobile/3/y/z/asus-zenfone-max-m1-zb556kl-4a001in-original-imafafe4fgzbyxnp.jpeg?q=70","https://rukminim1.flixcart.com/image/416/416/jnc2bgw0/mobile/3/y/z/asus-zenfone-max-m1-zb556kl-4a001in-original-imafafe3kkw8y768.jpeg?q=70","https://rukminim1.flixcart.com/image/416/416/jnc2bgw0/mobile/3/y/z/asus-zenfone-max-m1-zb556kl-4a001in-original-imafafe4jdhuzggx.jpeg?q=70","https://rukminim1.flixcart.com/image/416/416/jnc2bgw0/mobile/3/y/z/asus-zenfone-max-m1-zb556kl-4a001in-original-imafafe4mmyuv53d.jpeg?q=70"],
+    "store" : [ {
+      "storeId" : "amazon",
+      "storeLink" : "https://www.amazon.in",
+      "storeName" : "amazon",
+      "storePrice" : "5999"
+    }, {
+      "storeId" : "flipkart",
+      "storeLink" : "https://www.flipkart.com/asus-zenfone-max-m1-black-32-gb/p/itmfd9gq5x4khdef?pid=MOBF9FGSWNQNH3YZ&lid=LSTMOBF9FGSWNQNH3YZWLEFDB&marketplace=FLIPKART&srno=s_1_2&otracker=AS_QueryStore_OrganicAutoSuggest_1_4_na_na_na&otracker1=AS_QueryStore_OrganicAutoSuggest_1_4_na_na_na&fm=SEARCH&iid=98dd3fed-b17e-43cc-a199-b292aaef9737.MOBF9FGSWNQNH3YZ.SEARCH&ppt=sp&ppn=sp&ssid=8fe1zqwjg00000001589222292583&qH=588c0bb7f1928a48",
+      "storeName" : "flipkart",
+      "storePrice" : "5999"
+    } ]
+  },
+
+  {
+    "category" : "electronics",
+    "subcategory" : "mobiles",
+    "description" : "3 GB RAM | 32 GB ROM | Expandable Upto 2 TB 15.9 cm (6.26 inch) HD+ Display 13MP + 2MP | 8MP Front Camera 4000 mAh Battery Qualcomm Snapdragon 632 Octa Core Processor",
+    "rating" : "5",
+    "product_id" : "asus5",
+    "product_name" : "asus zenfone max m2 (blue, 32 gb)  (3 gb ram)",
+    "brand_name" : "asus",
+    "photos": ["https://rukminim1.flixcart.com/image/416/416/jp02t8w0/mobile/m/j/q/asus-zenfone-max-m2-zb632kl-4d005in-original-imafbcafbyehstsx.jpeg?q=70","https://rukminim1.flixcart.com/image/416/416/jpinjbk0/mobile/m/j/b/asus-zenfone-max-m2-zb632kl-4d002in-original-imafbqg8v2gyszgx.jpeg?q=70","https://rukminim1.flixcart.com/image/416/416/jp02t8w0/mobile/m/j/q/asus-zenfone-max-m2-zb632kl-4d005in-original-imafbca2hyhvurfp.jpeg?q=70","https://rukminim1.flixcart.com/image/416/416/jp02t8w0/mobile/m/j/q/asus-zenfone-max-m2-zb632kl-4d005in-original-imafbca2hh2gg3hg.jpeg?q=70","https://rukminim1.flixcart.com/image/416/416/jp02t8w0/mobile/m/j/q/asus-zenfone-max-m2-zb632kl-4d005in-original-imafbca2hdze6fjj.jpeg?q=70"],
+    "store" : [ {
+      "storeId" : "amazon",
+      "storeLink" : "https://www.amazon.in",
+      "storeName" : "amazon",
+      "storePrice" : "7499"
+    }, {
+      "storeId" : "flipkart",
+      "storeLink" : "https://www.flipkart.com/asus-zenfone-max-m2-blue-32-gb/p/itmfb22ghjtyxzg6?pid=MOBFB22GCGFSFMJB&lid=LSTMOBFB22GCGFSFMJBRGP0KW&marketplace=FLIPKART&srno=s_1_3&otracker=AS_QueryStore_OrganicAutoSuggest_1_4_na_na_na&otracker1=AS_QueryStore_OrganicAutoSuggest_1_4_na_na_na&fm=SEARCH&iid=98dd3fed-b17e-43cc-a199-b292aaef9737.MOBFB22GCGFSFMJB.SEARCH&ppt=sp&ppn=sp&ssid=8fe1zqwjg00000001589222292583&qH=588c0bb7f1928a48",
+      "storeName" : "flipkart",
+      "storePrice" : "7499"
+    } ]
+  },
+
+  {
+    "category" : "electronics",
+    "subcategory" : "mobiles",
+    "description" : "4 GB RAM | 64 GB ROM | Expandable Upto 2 TB 15.9 cm (6.26 inch) Full HD+ Display 12MP + 5MP | 13MP Front Camera 5000 mAh Battery Qualcomm Snapdragon 660 Octa Core Processor",
+    "rating" : "4",
+    "product_id" : "asus6",
+    "product_name" : "asus zenfone max pro m2 (blue, 64 gb)  (4 gb ram)",
+    "brand_name" : "asus",
+    "photos": ["https://rukminim1.flixcart.com/image/416/416/jpbic280/mobile/n/8/3/asus-zenfone-max-pro-m2-zb630kl-4d001in-original-imafbcbry5syfwf9.jpeg?q=70","https://rukminim1.flixcart.com/image/416/416/jpinjbk0/mobile/n/8/3/asus-zenfone-max-pro-m2-zb630kl-4d001in-original-imafbqg8pn9wht9b.jpeg?q=70","https://rukminim1.flixcart.com/image/416/416/jpbic280/mobile/n/8/3/asus-zenfone-max-pro-m2-zb630kl-4d001in-original-imafbcbrdg76qu4t.jpeg?q=70","https://rukminim1.flixcart.com/image/416/416/jpbic280/mobile/n/8/3/asus-zenfone-max-pro-m2-zb630kl-4d001in-original-imafbcbrgtfgcyhb.jpeg?q=70","https://rukminim1.flixcart.com/image/416/416/jpbic280/mobile/n/8/3/asus-zenfone-max-pro-m2-zb630kl-4d001in-original-imafbcbrw7yhysxe.jpeg?q=70"],
+    "store" : [ {
+      "storeId" : "amazon",
+      "storeLink" : "https://www.amazon.in",
+      "storeName" : "amazon",
+      "storePrice" : "11999"
+    }, {
+      "storeId" : "flipkart",
+      "storeLink" : "https://www.flipkart.com/asus-zenfone-max-pro-m2-blue-64-gb/p/itmfb22gm6tzurvy?pid=MOBFB22GKVVSXN83&lid=LSTMOBFB22GKVVSXN83YPIQYB&marketplace=FLIPKART&srno=s_1_6&otracker=AS_QueryStore_OrganicAutoSuggest_1_4_na_na_na&otracker1=AS_QueryStore_OrganicAutoSuggest_1_4_na_na_na&fm=SEARCH&iid=98dd3fed-b17e-43cc-a199-b292aaef9737.MOBFB22GKVVSXN83.SEARCH&ppt=sp&ppn=sp&ssid=8fe1zqwjg00000001589222292583&qH=588c0bb7f1928a48",
+      "storeName" : "flipkart",
+      "storePrice" : "11999"
+    } ]
+  }]
+}
