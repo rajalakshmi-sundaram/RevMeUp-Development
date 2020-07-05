@@ -27,8 +27,27 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class ProductsActivity extends AppCompatActivity {
+    static String getJsonFromAssets(Context context, String fileName) {
+        String jsonString;
+        try {
+            InputStream is = context.getAssets().open(fileName);
+
+            int size = is.available();
+            byte[] buffer = new byte[size];
+            is.read(buffer);
+            is.close();
+
+            jsonString = new String(buffer, "UTF-8");
+        } catch (IOException e) {
+            e.printStackTrace();
+            return null;
+        }
+
+        return jsonString;
+    }
 FloatingActionButton create;
     String name;
+    String json;
     String TAG = ProductsActivity.class.getSimpleName();
     ListView lv;
     ArrayList<HashMap<String,String>> productList;
@@ -56,19 +75,10 @@ FloatingActionButton create;
         }
         @Override
         protected Void doInBackground(Void... voids) {
-            String json = null;
-            try {
-                InputStream is = getAssets().open("json.json");
-                int size = is.available();
-                byte[] buffer = new byte[size];
-                is.read(buffer);
-                is.close();
-                json = new String(buffer,StandardCharsets.UTF_8);
-            } catch (IOException ex) {
-                ex.printStackTrace();
-            }
-            Log.e(TAG, "Response : " + json);
-            if (json != null) {
+
+            json=getJsonFromAssets(getApplicationContext(),"json.json");
+
+            /*if (json != null) {
                 try {
                     JSONObject jsonObj = new JSONObject(json);
                     JSONArray products = jsonObj.getJSONArray("products");
@@ -82,13 +92,13 @@ FloatingActionButton create;
                     e.printStackTrace();
                 }
 
-            }
+            }*/
             return null;
         }
         @Override
         protected void onPostExecute(Void result) {
             super.onPostExecute(result);
-            Toast.makeText(ProductsActivity.this,name,Toast.LENGTH_SHORT).show();
+            Toast.makeText(ProductsActivity.this,json.substring(0,10),Toast.LENGTH_SHORT).show();
             ListAdapter adapter = new SimpleAdapter(ProductsActivity.this, productList,
                     R.layout.list_item, new String[]{"name"},
                     new int[]{R.id.name});
