@@ -1,5 +1,6 @@
 package in.revmeup.revmeup;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
@@ -12,13 +13,20 @@ import android.widget.Button;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.w3c.dom.Text;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -27,39 +35,38 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class ProductsActivity extends AppCompatActivity {
-    static String getJsonFromAssets(Context context, String fileName) {
-        String jsonString;
-        try {
-            InputStream is = context.getAssets().open(fileName);
-
-            int size = is.available();
-            byte[] buffer = new byte[size];
-            is.read(buffer);
-            is.close();
-
-            jsonString = new String(buffer, "UTF-8");
-        } catch (IOException e) {
-            e.printStackTrace();
-            return null;
-        }
-
-        return jsonString;
-    }
-FloatingActionButton create;
+    TextView pname;
+    FloatingActionButton create;
     String name;
     String json;
     String TAG = ProductsActivity.class.getSimpleName();
     ListView lv;
     ArrayList<HashMap<String,String>> productList;
     HashMap<String,String> product;
+
+    final FirebaseDatabase database = FirebaseDatabase.getInstance();
+    DatabaseReference reff;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_products);
-        productList = new ArrayList<>();
-        lv = (ListView) findViewById(R.id.list);
 
-        new GetProducts().execute();
+        pname=(TextView)findViewById(R.id.textView7);
+        reff= database.getInstance().getReference("u/1/project/revmeup-ecb05/database/revmeup-ecb05/data/~2F").child("asus1");
+        reff.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                Product p=dataSnapshot.getValue(Product.class);
+                String name=p.getProduct_name();
+                //String name=dataSnapshot.child("product_name").getValue().toString();
+                pname.setText(name);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                System.out.println("The read failed: " + databaseError.getCode());
+            }
+        });
+        setContentView(R.layout.activity_products);
                 create = (FloatingActionButton) findViewById(R.id.floatingActionButton3);
         create.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,42 +75,4 @@ FloatingActionButton create;
             }
         });
     }
-    public class GetProducts extends AsyncTask<Void, Void, Void> {
-        @Override
-        protected void onPreExecute() {
-            super.onPreExecute();
-        }
-        @Override
-        protected Void doInBackground(Void... voids) {
-
-            json=getJsonFromAssets(getApplicationContext(),"json.json");
-
-            /*if (json != null) {
-                try {
-                    JSONObject jsonObj = new JSONObject(json);
-                    JSONArray products = jsonObj.getJSONArray("products");
-                    JSONObject c= products.getJSONObject(0);
-                    name=c.getString("product_name");
-
-                    product.put("product_name",name);
-                    productList.add(product);
-
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-
-            }*/
-            return null;
-        }
-        @Override
-        protected void onPostExecute(Void result) {
-            super.onPostExecute(result);
-            Toast.makeText(ProductsActivity.this,json.substring(0,10),Toast.LENGTH_SHORT).show();
-            ListAdapter adapter = new SimpleAdapter(ProductsActivity.this, productList,
-                    R.layout.list_item, new String[]{"name"},
-                    new int[]{R.id.name});
-            lv.setAdapter(adapter);
-
-        }
-    }
-}
+ }
