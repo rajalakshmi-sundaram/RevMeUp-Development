@@ -21,6 +21,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import org.json.JSONArray;
@@ -44,28 +45,25 @@ public class ProductsActivity extends AppCompatActivity {
     ArrayList<HashMap<String,String>> productList;
     HashMap<String,String> product;
 
-    final FirebaseDatabase database = FirebaseDatabase.getInstance();
+    final FirebaseDatabase database = FirebaseDatabase.getInstance("https://console.firebase.google.com/u/1/project/revmeup-ecb05/database/revmeup-ecb05/data/~2F");
     DatabaseReference reff;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        pname=(TextView)findViewById(R.id.textView7);
-        reff= database.getInstance().getReference("u/1/project/revmeup-ecb05/database/revmeup-ecb05/data/~2F").child("asus1");
-        reff.addValueEventListener(new ValueEventListener() {
+       reff=database.getReference();
+        Query productQuery = reff              .child(getString(R.string.dbname_products));
+//
+        similarproductQuery3.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                Product p=dataSnapshot.getValue(Product.class);
-                String name=p.getProduct_name();
-                //String name=dataSnapshot.child("product_name").getValue().toString();
-                pname.setText(name);
-            }
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-                System.out.println("The read failed: " + databaseError.getCode());
-            }
-        });
+                for (DataSnapshot singleSnapshot : dataSnapshot.getChildren()) {
+                    Product product1 = singleSnapshot.getValue(Product.class);
+                    GlobalData.productsMap.put(singleSnapshot.getValue(Product.class).getProduct_id(), singleSnapshot.getValue(Product.class));
+                    similarProducts.add(singleSnapshot.getValue(Product.class));
+                    Log.d(TAG, "checkMap3 :" + singleSnapshot);
+//                                       product_name.add(singleSnapshot.getValue(Product.class).getProductName().toString());
+                    String price = "N/A";
         setContentView(R.layout.activity_products);
                 create = (FloatingActionButton) findViewById(R.id.floatingActionButton3);
         create.setOnClickListener(new View.OnClickListener() {
