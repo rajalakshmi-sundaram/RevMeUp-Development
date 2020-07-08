@@ -17,12 +17,14 @@ import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class SignUpActivity extends AppCompatActivity {
     private FirebaseAuth.AuthStateListener mAuthStateListener;
     FirebaseAuth mFirebaseAuth=FirebaseAuth.getInstance();
-
-
+    FirebaseDatabase rootNode;
+    DatabaseReference reference;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,14 +33,13 @@ public class SignUpActivity extends AppCompatActivity {
         final EditText eid, pwd;
         Button signupButton;
         Button loginButton;
-
         mFirebaseAuth = FirebaseAuth.getInstance();
         eid = findViewById(R.id.enter_username_or_email);
         pwd = findViewById(R.id.enter_password);
         signupButton =(Button) findViewById(R.id.sign_up);
 
 
-        mAuthStateListener = new FirebaseAuth.AuthStateListener() {
+          mAuthStateListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 FirebaseUser mFirebaseUser = mFirebaseAuth.getCurrentUser();
@@ -92,6 +93,11 @@ public class SignUpActivity extends AppCompatActivity {
                                     task.getException().getMessage();
                                 }
                             });
+                    rootNode=FirebaseDatabase.getInstance();
+                    reference=rootNode.getReference("Users");
+                    UserDet user = new UserDet(email,password);
+                    reference.child("new").setValue(user);
+                    success();
                 }
 
                 else{
