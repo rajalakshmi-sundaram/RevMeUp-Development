@@ -89,8 +89,7 @@ public class SignUpActivity extends AppCompatActivity {
                                                 .setAction("Action", null).show();
                                         success();
                                     }
-                                    task.getException().printStackTrace();
-                                    task.getException().getMessage();
+
                                 }
                             });
                     rootNode=FirebaseDatabase.getInstance();

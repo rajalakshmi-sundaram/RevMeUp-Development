@@ -32,16 +32,17 @@ public class ProductsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_products);
-       reff=database.getReference("asus1");
-        Query productQuery = reff.orderByKey();
+        //reff=database.getReference("asus1");
+        Query productQuery = database.getInstance().getReference("asus1");
+
 //
         productQuery.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                    for (DataSnapshot singleSnapshot : dataSnapshot.getChildren()) {
-                    Product product1 = singleSnapshot.getValue(Product.class);
+                    //for (DataSnapshot singleSnapshot : dataSnapshot.getChildren()) {
+                    Product product1 = dataSnapshot.getValue(Product.class);
                         pname.setText(product1.getProduct_name());
-                    }
+                    //}
 
             }
 
