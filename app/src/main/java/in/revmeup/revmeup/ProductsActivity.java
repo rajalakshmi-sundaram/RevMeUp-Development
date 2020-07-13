@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.SearchView;
 import android.widget.TextView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -24,9 +25,9 @@ import java.util.HashMap;
 
 public class ProductsActivity extends AppCompatActivity {
     private static final String TAG = "ProductsActivity";
+    ArrayAdapter<String> arrayAdapter;
     ListView productNameList;
     FloatingActionButton create;
-    ArrayList<String> productList=new ArrayList<>();
     HashMap<String,String> product;
     final FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference reff;
@@ -34,21 +35,22 @@ public class ProductsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_products);
-        //reff=database.getReference("asus1");
+        final ArrayList<String> productList = new ArrayList<>();
+        final FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference reff;
+        productNameList = (ListView) findViewById(R.id.productListView);
+
         reff = database.getReference();
-            productNameList=(ListView)findViewById(R.id.ListView7);
+
 //
         reff.child("Products").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                Log.d(TAG, "onDataChange: "+dataSnapshot);
+
                 for (DataSnapshot singleSnapshot : dataSnapshot.getChildren()) {
-                   Product product1 = singleSnapshot.getValue(Product.class);
-                           productList.add(product1.getProduct_name());
-                    }
-
-
-
+                    Product product1 = singleSnapshot.getValue(Product.class);
+                    productList.add(product1.getProduct_name());
+                }
             }
 
             @Override
@@ -56,11 +58,10 @@ public class ProductsActivity extends AppCompatActivity {
 
             }
         });
-        ArrayAdapter<String> arrayAdapter =
-                new ArrayAdapter<String>(this,R.layout.activity_products,productList);
+        arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,productList);
         // Set The Adapter
-        productNameList.setAdapter(arrayAdapter);
 
+        productNameList.setAdapter(arrayAdapter);
                 create = (FloatingActionButton) findViewById(R.id.floatingActionButton3);
         create.setOnClickListener(new View.OnClickListener() {
             @Override
