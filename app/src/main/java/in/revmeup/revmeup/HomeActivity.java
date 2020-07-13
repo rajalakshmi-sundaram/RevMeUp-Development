@@ -11,11 +11,14 @@ import android.widget.Button;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
+import in.revmeup.revmeup.ui.main.contests;
+
 
 public class HomeActivity extends AppCompatActivity {
     FloatingActionButton prod;
     FloatingActionButton post;
     FloatingActionButton message;
+    FloatingActionButton contest;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +43,14 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(HomeActivity.this, FMessagesActivity.class));
+            }
+        });
+
+        contest = (FloatingActionButton) findViewById(R.id.floatingActionButton6);
+        contest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(HomeActivity.this, contests.class));
             }
         });
 
