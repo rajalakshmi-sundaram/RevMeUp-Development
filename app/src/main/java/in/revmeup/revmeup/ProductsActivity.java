@@ -5,8 +5,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.SearchView;
 import android.widget.TextView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -21,29 +24,33 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class ProductsActivity extends AppCompatActivity {
-    TextView pname;
+    private static final String TAG = "ProductsActivity";
+    ArrayAdapter<String> arrayAdapter;
+    ListView productNameList;
     FloatingActionButton create;
-    ArrayList<String> productList;
     HashMap<String,String> product;
-
     final FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference reff;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_products);
-        //reff=database.getReference("asus1");
-        Query productQuery = database.getInstance().getReference("asus1");
+        final ArrayList<String> productList = new ArrayList<>();
+        final FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference reff;
+        productNameList = (ListView) findViewById(R.id.productListView);
+
+        reff = database.getReference();
 
 //
-        productQuery.addListenerForSingleValueEvent(new ValueEventListener() {
+        reff.child("Products").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                    //for (DataSnapshot singleSnapshot : dataSnapshot.getChildren()) {
-                    Product product1 = dataSnapshot.getValue(Product.class);
-                        pname.setText(product1.getProduct_name());
-                    //}
 
+                for (DataSnapshot singleSnapshot : dataSnapshot.getChildren()) {
+                    Product product1 = singleSnapshot.getValue(Product.class);
+                    productList.add(product1.getProduct_name());
+                }
             }
 
             @Override
@@ -51,8 +58,11 @@ public class ProductsActivity extends AppCompatActivity {
 
             }
         });
+        arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,productList);
+        // Set The Adapter
 
-                create = (FloatingActionButton) findViewById(R.id.floatingActionButton3);
+        productNameList.setAdapter(arrayAdapter);
+        create = (FloatingActionButton) findViewById(R.id.floatingActionButton3);
         create.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -60,5 +70,4 @@ public class ProductsActivity extends AppCompatActivity {
             }
         });
     }
- }
-
+}
