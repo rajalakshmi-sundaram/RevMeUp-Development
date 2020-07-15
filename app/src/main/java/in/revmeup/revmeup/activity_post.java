@@ -11,7 +11,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class activity_post extends AppCompatActivity {
 
-    Button next;
+    Button next,cancel;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,9 +20,15 @@ public class activity_post extends AppCompatActivity {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //(new Intent(activity_post.this, UploadActivity.class));
+                startActivity(new Intent(activity_post.this, AdvActivity.class));
             }
         });
-
+        cancel = (Button) findViewById(R.id.button2);
+        cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(activity_post.this, HomeActivity.class));
+            }
+        });
     }
 }

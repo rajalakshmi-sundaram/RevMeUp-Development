@@ -43,7 +43,7 @@ public class LoginActivity extends AppCompatActivity {
                 final String email = eid.getText().toString();
                 final String password = pwd.getText().toString();
 
-                startActivity(new Intent(LoginActivity.this, HomeActivity.class));
+                //startActivity(new Intent(LoginActivity.this, HomeActivity.class));
                  if(email.isEmpty())
                 {
                     eid.setError("Enter username or email");
@@ -63,8 +63,6 @@ public class LoginActivity extends AppCompatActivity {
 
                 else if(!(email.isEmpty() && password.isEmpty()))
                 {
-
-                    Toast.makeText(LoginActivity.this,"Registered Successfully "+email,Toast.LENGTH_SHORT).show();
                     mFirebaseAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(LoginActivity.this,
                             new OnCompleteListener<AuthResult>() {
 
