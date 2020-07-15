@@ -1,4 +1,6 @@
 package in.revmeup.revmeup;
 
-public class FirstFragment {
+import android.app.Activity;
+
+public class FirstFragment extends Activity {
 }
