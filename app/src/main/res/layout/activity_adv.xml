@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/container"
     tools:context=".AdvActivity">
 
     <ImageView
@@ -24,7 +25,7 @@
         android:layout_width="53dp"
         android:layout_height="53dp"
         android:layout_marginEnd="44dp"
-        android:layout_marginBottom="68dp"
+        android:layout_marginBottom="50dp"
         android:text="GO!"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
@@ -34,7 +35,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="30dp"
         android:text="Upload a Catch phrase for your product"
         android:textColor="#050505"
         android:textSize="16sp"
@@ -54,11 +55,11 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName2"
+        android:id="@+id/imgDescr"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="36dp"
-        android:layout_marginBottom="64dp"
+        android:layout_marginBottom="50dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Enter"

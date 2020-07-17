@@ -5,15 +5,16 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.SearchView;
 import android.widget.Toast;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -23,12 +24,14 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+
 public class activity_post extends AppCompatActivity {
     ListView productNameList;
     SearchView searchView;
     Button next, cancel;
     ArrayAdapter<String> arrayAdapter;
-
+    //EditText productName;
+    String prodName;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,6 +39,7 @@ public class activity_post extends AppCompatActivity {
         final ArrayList<String> productList = new ArrayList<>();
         final FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference reff;
+        //productName=(EditText)findViewById(R.id.searchView);
         productNameList = (ListView) findViewById(R.id.productListView);
         searchView = (SearchView) findViewById(R.id.searchView);
 
@@ -68,6 +72,7 @@ public class activity_post extends AppCompatActivity {
 
                     if (productList.contains(query)) {
                         arrayAdapter.getFilter().filter(query);
+                        prodName =query;
                     } else {
                         Toast.makeText(activity_post.this, "No Match found", Toast.LENGTH_LONG).show();
                     }
@@ -84,7 +89,10 @@ public class activity_post extends AppCompatActivity {
             next.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    startActivity(new Intent(activity_post.this, AdvActivity.class));
+
+                    Intent intent=new Intent(activity_post.this, AdvActivity.class);
+                    intent.putExtra("product_name",prodName);
+                    startActivity(intent);
                 }
             });
             cancel = (Button) findViewById(R.id.button2);

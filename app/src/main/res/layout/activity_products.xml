@@ -23,10 +23,10 @@
         android:id="@+id/productListView"
         android:layout_width="362dp"
         android:layout_height="488dp"
-        android:layout_below="@+id/searchView"
+        android:layout_below="@id/textView"
         android:layout_marginTop="21dp"
         android:divider="#ad5"
-        android:dividerHeight="2dp"
+        android:dividerHeight="1dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView"
         tools:ignore="NotSibling" />
