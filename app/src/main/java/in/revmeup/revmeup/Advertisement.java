@@ -6,7 +6,7 @@ public class Advertisement {
     private String productName;
     private String productDescription;
     private String productImageUrl;
-    public Advertisement(String productDescription,String productImageUrl,String productName )
+    public Advertisement(String productName,String productImageUrl,String productDescription)
     {
         this.productName=productName;
         this.productImageUrl=productImageUrl;
@@ -15,6 +15,8 @@ public class Advertisement {
     public Advertisement()
     {
     }
+
+
     @Override
     public String toString() {
         return "Advertisement{" +

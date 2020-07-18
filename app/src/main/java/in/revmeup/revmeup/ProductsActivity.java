@@ -45,7 +45,7 @@ public class ProductsActivity extends AppCompatActivity {
                 for (DataSnapshot singleSnapshot : dataSnapshot.getChildren()) {
                     Product product1 = singleSnapshot.getValue(Product.class);
                     productList.add(product1.getProduct_name());
-
+                    arrayAdapter.notifyDataSetChanged();
                 }
             }
 
@@ -58,7 +58,6 @@ public class ProductsActivity extends AppCompatActivity {
         arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,productList);
         // Set The Adapter
         productNameList.setAdapter(arrayAdapter);
-
         arrayAdapter.getFilter();
                 create = (FloatingActionButton) findViewById(R.id.floatingActionButton3);
         create.setOnClickListener(new View.OnClickListener() {

@@ -72,7 +72,7 @@ public class activity_post extends AppCompatActivity {
 
                     if (productList.contains(query)) {
                         arrayAdapter.getFilter().filter(query);
-                        prodName =query;
+                        prodName = query;
                     } else {
                         Toast.makeText(activity_post.this, "No Match found", Toast.LENGTH_LONG).show();
                     }
@@ -89,7 +89,6 @@ public class activity_post extends AppCompatActivity {
             next.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-
                     Intent intent=new Intent(activity_post.this, AdvActivity.class);
                     intent.putExtra("product_name",prodName);
                     startActivity(intent);

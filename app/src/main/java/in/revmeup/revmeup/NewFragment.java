@@ -1,15 +1,19 @@
 package in.revmeup.revmeup;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -23,6 +27,9 @@ import com.google.firebase.database.ValueEventListener;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.ArrayList;
+
+import static android.app.Activity.RESULT_OK;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -33,6 +40,8 @@ public class NewFragment extends Fragment {
     TextView productName;
     ImageView productImage;
     TextView productDescription;
+    public Uri imguri;
+    final ArrayList<String> details = new ArrayList<>();
     Bitmap mIcon_val;
     String desc="description";
     // TODO: Rename parameter arguments, choose names that match
@@ -67,16 +76,33 @@ public class NewFragment extends Fragment {
         }
     }
 
+    /*public void imageSetter()
+    {
+        Intent intent = new Intent();
+        intent.setType("image/'");
+        intent.setAction(Intent.ACTION_GET_CONTENT);
+        startActivityForResult(intent,1);
+    }
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode==1 && resultCode==RESULT_OK &&data!=null &&data.getData()!=null)
+        {
+            imguri=data.getData();
+            productImage.setImageURI(imguri);
+        }
+    }*/
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
        View v = inflater.inflate(R.layout.fragment_new, container, false);
 
-       // productImage = (ImageView) v.findViewById(R.id.imageView4);
-        //productDescription = (TextView) v.findViewById(R.id.textView15);
+       productImage = (ImageView) v.findViewById(R.id.imageView4);
+       productDescription = (TextView) v.findViewById(R.id.textView15);
        final FirebaseDatabase database = FirebaseDatabase.getInstance();
        DatabaseReference reff;
+
 
         productName =  v.findViewById(R.id.textView14);
         productDescription = v.findViewById(R.id.textView15);
@@ -85,39 +111,27 @@ public class NewFragment extends Fragment {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-                for (DataSnapshot singleSnapshot : dataSnapshot.getChildren()) {
-                    Advertisement advertisement = singleSnapshot.getValue(Advertisement.class);
+                    DataSnapshot snapshot = dataSnapshot;
+
+                    Advertisement advertisement = snapshot.child("adv").getValue(Advertisement.class);
                     productName.setText(advertisement.getProductName());
-                    URL newurl=null;
-                    try {
-                        newurl=new URL(advertisement.getProductImageUrl());
-                    } catch (MalformedURLException e) {
-                        e.printStackTrace();
-                    }
-                    /*URL newurl = null;
-                    try {
-                        newurl = new URL(advertisement.getProductImageUrl());
-                    } catch (MalformedURLException e) {
-                        e.printStackTrace();
-                    }
 
-                    try {
-                        mIcon_val = BitmapFactory.decodeStream(newurl.openConnection() .getInputStream());
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                    productImage.setImageBitmap(mIcon_val);*/
+                    //imageSetter();
+                     imguri = Uri.parse(advertisement.getProductImageUrl());
+                     productImage.setImageURI(imguri);
+                     productDescription.setText( advertisement.getProductDescription());
 
-                    desc=advertisement.getProductDescription();
-                    productDescription.setText(desc);
-                }
 
             }
+
+
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
 
             }
+
         });
+
        return v;
     }
 }

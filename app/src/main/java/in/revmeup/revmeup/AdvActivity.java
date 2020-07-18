@@ -96,16 +96,14 @@ public class AdvActivity extends AppCompatActivity {
                         //Uri downloadUrl = taskSnapshot.getDownloadUrl();
 
                         DatabaseReference imagestore= FirebaseDatabase.getInstance().getReference().child("Advertisement");
-                        HashMap<String,String> hashMap=new HashMap<>();
-                        hashMap.put("productName",prodName);
-                        hashMap.put("imageUrl",String.valueOf(imguri));
                         imageDescription = imgDesc.getText().toString();
-                        hashMap.put("imageDescription",imageDescription);
+                        Advertisement advertisement=new Advertisement(prodName,String.valueOf(imguri),imageDescription);
 
-                        imagestore.child("adv").setValue(hashMap).addOnSuccessListener(new OnSuccessListener<Void>() {
+                        Toast.makeText(AdvActivity.this,"Image uploaded Successfully",Toast.LENGTH_LONG).show();
+                        imagestore.child("adv").setValue(advertisement).addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
                             public void onSuccess(Void aVoid) {
-                                Toast.makeText(AdvActivity.this,"Image uploaded Successfully",Toast.LENGTH_LONG);
+                                Toast.makeText(AdvActivity.this,"Image uploaded Successfully",Toast.LENGTH_LONG).show();
                             }
                         });
                     }
