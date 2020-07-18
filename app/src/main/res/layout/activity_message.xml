@@ -1,26 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.wear.widget.BoxInsetLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:background="@color/dark_grey"
-    android:layout_width="match_parent"
+<RelativeLayout
     android:layout_height="match_parent"
-    tools:context=".MessageActivity"
-    tools:deviceIds="wear"
-    android:padding="@dimen/box_inset_layout_padding">
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
 
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="@dimen/inner_frame_layout_padding"
-        app:boxedEdges="all">
+    <TextView
+        android:id="@+id/type_message"
+        android:layout_width="294dp"
+        android:layout_height="55dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="5dp"
+        android:layout_marginBottom="7dp"
+        android:hint="@string/type_message_here" />
 
-        <TextView
-            android:id="@+id/text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/hello_world" />
+    <Button
+        android:id="@+id/send_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="13dp"
+        android:text="@string/send"
+        android:onClick="sendMessage"/>
 
-    </FrameLayout>
-</androidx.wear.widget.BoxInsetLayout>
+    <TextView
+        android:id="@+id/message_page"
+        android:layout_width="400dp"
+        android:layout_height="666dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="7dp"
+        android:layout_marginTop="1dp"
+        android:text="@string/message" />
+</RelativeLayout>

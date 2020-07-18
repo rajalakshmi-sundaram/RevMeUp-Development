@@ -58,6 +58,17 @@ public class HomeActivity extends AppCompatActivity {
                         case R.id.nav_products:
                             startActivity(new Intent(HomeActivity.this, ProductsActivity.class));
                             break;
+
+                        case R.id.searchButton:
+                            selected = new SearchFragment();
+                            break;
+
+                        case R.id.notifButton:
+                            selected = new NotificationFragment();
+                            break;
+                    }
+                    if (selected != null){
+                        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, selected).commit();
                     }
 
                     return true;
