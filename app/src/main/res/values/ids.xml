@@ -2,4 +2,5 @@
 <resources>
     <item name="log_in_button" type="id"></item>
     <item name="sign_up_button" type="id"></item>
+<!--    <item name="action_FirstFragment_to_SecondFragment" type="id">FirstFtoSecondF</item>-->
 </resources>

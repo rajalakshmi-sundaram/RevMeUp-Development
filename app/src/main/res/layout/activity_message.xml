@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android" >
 
-    <TextView
+    <EditText
         android:id="@+id/type_message"
         android:layout_width="294dp"
         android:layout_height="55dp"
@@ -12,7 +12,8 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="5dp"
         android:layout_marginBottom="7dp"
-        android:hint="@string/type_message_here" />
+        android:hint="@string/type_message_here"
+        />
 
     <Button
         android:id="@+id/send_message"
@@ -22,8 +23,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginEnd="12dp"
         android:layout_marginBottom="13dp"
-        android:text="@string/send"
-        android:onClick="sendMessage"/>
+        android:text="@string/send"/>
 
     <TextView
         android:id="@+id/message_page"
