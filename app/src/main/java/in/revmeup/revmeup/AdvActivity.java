@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
+import android.app.FragmentTransaction;
 import android.content.ContentResolver;
 import android.content.Intent;
 import android.net.Uri;
@@ -71,9 +72,13 @@ public class AdvActivity extends AppCompatActivity {
             public void onClick(final View v) {
                 ch.setVisibility(View.GONE);
                 up.setVisibility(View.GONE);
-
+                go.setVisibility(View.GONE);
+                //FragmentTransaction transaction=getFragmentManager().beginTransaction();
                 FragmentManager fragmentManager = getSupportFragmentManager();
                 NewFragment fragment=new NewFragment();
+                Bundle bundle=new Bundle();
+                bundle.putString("product_name",prodName);
+                fragment.setArguments(bundle);
                 fragmentManager.beginTransaction().replace(R.id.container,fragment).commit();
             }
         });
@@ -100,7 +105,7 @@ public class AdvActivity extends AppCompatActivity {
                         Advertisement advertisement=new Advertisement(prodName,String.valueOf(imguri),imageDescription);
 
                         Toast.makeText(AdvActivity.this,"Image uploaded Successfully",Toast.LENGTH_LONG).show();
-                        imagestore.child("adv").setValue(advertisement).addOnSuccessListener(new OnSuccessListener<Void>() {
+                        imagestore.child(prodName).setValue(advertisement).addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
                             public void onSuccess(Void aVoid) {
                                 Toast.makeText(AdvActivity.this,"Image uploaded Successfully",Toast.LENGTH_LONG).show();

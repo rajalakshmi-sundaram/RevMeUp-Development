@@ -1,11 +1,8 @@
 package in.revmeup.revmeup;
 
 import android.content.Context;
-import android.content.Intent;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.net.Uri;
@@ -15,7 +12,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
 import java.util.List;
 
 public class PostAdapter extends RecyclerView.Adapter<PostAdapter.MyViewHolder> {
@@ -23,6 +19,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.MyViewHolder> 
     Context mContext;
     List<Advertisement> mData ;
     Uri imguri;
+    String url;
 
     public PostAdapter(Context mContext, List<Advertisement> mData) {
         this.mContext = mContext;
@@ -39,11 +36,12 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.MyViewHolder> 
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-
-        holder.tvTitle.setText(mData.get(position).getProductName());
-        imguri = Uri.parse(mData.get(position).getProductImageUrl());
-        //holder.imgPost.setImageURI(imguri);
-        //Glide.with(mContext).load(mData.get(position).getUserPhoto()).into(holder.imgPostProfile);
+        holder.tvProduct.setText(mData.get(position).getProductName());
+        holder.tvDescription.setText(mData.get(position).getProductDescription());
+        url=mData.get(position).getProductImageUrl();
+        imguri = Uri.parse(url);
+        holder.imgPost.setImageURI(imguri);
+        //Glide.with(mContext).load(mData.get(position).getProductImageUrl()).into(holder.imgPostProfile);
 
     }
 
@@ -54,16 +52,19 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.MyViewHolder> 
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
-        TextView tvTitle;
+        TextView tvDescription;
+        TextView tvProduct;
         ImageView imgPost;
         ImageView imgPostProfile;
 
         public MyViewHolder(View itemView) {
             super(itemView);
 
-            tvTitle = itemView.findViewById(R.id.row_post_title);
+            tvDescription = itemView.findViewById(R.id.row_post_description);
+            tvProduct = itemView.findViewById(R.id.row_post_product);
             imgPost = itemView.findViewById(R.id.row_post_img);
             imgPostProfile = itemView.findViewById(R.id.row_post_profile_img);
+            imgPost.setImageURI(imguri);
 
             /*itemView.setOnClickListener(new View.OnClickListener() {
                 @Override

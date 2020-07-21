@@ -41,6 +41,7 @@ public class NewFragment extends Fragment {
     ImageView productImage;
     TextView productDescription;
     public Uri imguri;
+    String prodName;
     final ArrayList<String> details = new ArrayList<>();
     Bitmap mIcon_val;
     String desc="description";
@@ -96,32 +97,30 @@ public class NewFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-       View v = inflater.inflate(R.layout.fragment_new, container, false);
-
-       productImage = (ImageView) v.findViewById(R.id.imageView4);
-       productDescription = (TextView) v.findViewById(R.id.textView15);
-       final FirebaseDatabase database = FirebaseDatabase.getInstance();
-       DatabaseReference reff;
-
-
+        View v = inflater.inflate(R.layout.fragment_new, container, false);
+        Bundle bundle=getArguments();
+        prodName = String.valueOf(bundle.getString("product_name"));
+        productImage = (ImageView) v.findViewById(R.id.imageView4);
+        final FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference reff;
         productName =  v.findViewById(R.id.textView14);
         productDescription = v.findViewById(R.id.textView15);
+        productName.setText(prodName);
         reff = database.getReference();
         reff.child("Advertisement").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-                    DataSnapshot snapshot = dataSnapshot;
+                for (DataSnapshot singleSnapshot : dataSnapshot.getChildren()) {
+                    Advertisement advertisement = singleSnapshot.getValue(Advertisement.class);
 
-                    Advertisement advertisement = snapshot.child("adv").getValue(Advertisement.class);
-                    productName.setText(advertisement.getProductName());
+                    if (advertisement.getProductName() == prodName) {
 
-                    //imageSetter();
-                     imguri = Uri.parse(advertisement.getProductImageUrl());
-                     productImage.setImageURI(imguri);
-                     productDescription.setText( advertisement.getProductDescription());
-
-
+                        imguri = Uri.parse(advertisement.getProductImageUrl());
+                        productImage.setImageURI(imguri);
+                        productDescription.setText(advertisement.getProductDescription());
+                    }
+                }
             }
 
 
@@ -132,6 +131,6 @@ public class NewFragment extends Fragment {
 
         });
 
-       return v;
+        return v;
     }
 }
