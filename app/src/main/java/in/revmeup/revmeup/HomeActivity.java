@@ -13,6 +13,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -32,6 +33,7 @@ public class HomeActivity extends AppCompatActivity {
 
     BottomNavigationView bottomNavigationView;
     Fragment selected = null;
+    ImageButton profilePage;
 
     RecyclerView postRecyclerView ;
     PostAdapter postAdapter ;
@@ -42,7 +44,14 @@ public class HomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-
+        profilePage = findViewById(R.id.profileButton);
+        profilePage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(HomeActivity.this, ProfileActivity.class);
+                startActivity(intent);
+            }
+        });
         postRecyclerView  = findViewById(R.id.postRV);
         postRecyclerView.setLayoutManager(new LinearLayoutManager(HomeActivity.this));
         postRecyclerView.setHasFixedSize(true);
