@@ -8,7 +8,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -34,7 +33,7 @@ public class SignUpActivity extends AppCompatActivity {
         Button signupButton;
         Button loginButton;
         mFirebaseAuth = FirebaseAuth.getInstance();
-        eid = findViewById(R.id.enter_username_or_email);
+        eid = findViewById(R.id.Name);
         pwd = findViewById(R.id.enter_password);
         signupButton =(Button) findViewById(R.id.sign_up);
 

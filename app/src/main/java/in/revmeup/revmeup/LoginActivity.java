@@ -5,14 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
-import android.media.MediaPlayer;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ProgressBar;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -33,7 +29,7 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         final ProgressDialog progressDialog = new ProgressDialog(this);
         mFirebaseAuth = FirebaseAuth.getInstance();
-        eid = (EditText) findViewById(R.id.enter_username_or_email);
+        eid = (EditText) findViewById(R.id.Name);
         pwd = (EditText) findViewById(R.id.enter_password);
 
         loginButton = (Button) findViewById(R.id.log_in);

@@ -11,14 +11,13 @@
         android:id="@+id/row_post_img"
         android:layout_width="148dp"
         android:layout_height="152dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="130dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="164dp"
         android:contentDescription="TODO"
         android:scaleType="centerCrop"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_launcher_background" />
-
 
     <TextView
         android:id="@+id/row_post_description"
@@ -37,7 +36,7 @@
         android:id="@+id/row_post_profile_img"
         android:layout_width="48dp"
         android:layout_height="48dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginEnd="75dp"
         android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

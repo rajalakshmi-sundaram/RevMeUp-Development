@@ -5,17 +5,37 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SignUpActivity">
-    <EditText
-        android:id="@+id/enter_password"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="250dp"
-        android:layout_marginBottom="266dp"
-        android:ems="10"
-        android:inputType="textPassword"
-        android:text="@string/enter_password"
-        app:layout_constraintBottom_toBottomOf="parent"
+
+    <AutoCompleteTextView
+        android:id="@+id/enter_username_or_email4"
+        android:layout_width="234dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="404dp"
+        android:hint="Phone"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.57"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <AutoCompleteTextView
+        android:id="@+id/Username"
+        android:layout_width="234dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="172dp"
+        android:hint="Username"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.57"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <AutoCompleteTextView
+        android:id="@+id/enter_username_or_email3"
+        android:layout_width="234dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="480dp"
+        android:hint="Website"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.57"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -23,11 +43,35 @@
         android:id="@+id/enter_username_or_email"
         android:layout_width="234dp"
         android:layout_height="55dp"
-        android:layout_marginTop="180dp"
-        android:layout_marginBottom="36dp"
-        android:text="@string/enter_username_or_email"
-        app:layout_constraintBottom_toTopOf="@+id/enter_password"
+        android:layout_marginTop="252dp"
+        android:hint="Email"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.57"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/enter_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="250dp"
+        android:layout_marginBottom="266dp"
+        android:ems="10"
+        android:hint="Password"
+        android:inputType="textPassword"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <AutoCompleteTextView
+        android:id="@+id/Name"
+        android:layout_width="234dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="96dp"
+        android:hint="Name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.57"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -35,11 +79,10 @@
         android:id="@+id/sign_up"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="29dp"
-        android:layout_marginBottom="210dp"
+        android:layout_marginTop="200dp"
         android:text="@string/sign_up"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/enter_password" />
 

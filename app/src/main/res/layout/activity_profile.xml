@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ProfileActivity">
+
     <RelativeLayout
         android:id="@+id/rellay1"
         android:layout_width="match_parent"
@@ -30,7 +31,7 @@
                 android:adjustViewBounds="true"
                 android:background="@drawable/me"
                 android:padding="3dp"
-                android:scaleType="centerInside"/>
+                android:scaleType="centerInside" />
 
         </RelativeLayout>
 
@@ -40,7 +41,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/imgUser"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="15sp"
+            android:layout_marginTop="10sp"
             android:fontFamily="sans-serif-light"
             android:text="Name"
             android:textColor="@color/white"
@@ -60,14 +61,33 @@
             android:textSize="14sp" />
 
         <ImageView
+            android:id="@+id/setting"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_alignParentRight="true"
-            android:layout_marginRight="15dp"
             android:layout_marginTop="15dp"
+            android:layout_marginRight="15dp"
             android:adjustViewBounds="true"
             android:scaleType="centerInside"
             android:src="@drawable/ic_settings" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/setting"
+            android:layout_alignBottom="@+id/setting"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="115dp"
+            android:layout_marginRight="75dp"
+            android:layout_marginBottom="-171dp"
+            android:background="@color/pink"
+            android:backgroundTint="@color/orange"
+            android:clickable="true"
+            app:backgroundTint="@color/orange"
+            app:maxImageSize="24sp"
+            app:srcCompat="@android:drawable/ic_menu_edit" />
+
 
     </RelativeLayout>
 
@@ -156,17 +176,19 @@
 
 
     <RelativeLayout
+        android:id="@+id/detL"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/linlay1">
 
         <LinearLayout
+            android:id="@+id/detLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
             android:layout_marginTop="20dp"
+            android:layout_marginRight="30dp"
             android:orientation="vertical">
 
             <LinearLayout
