@@ -26,6 +26,8 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
+import in.revmeup.revmeup.ui.main.Contests;
+
 //import in.revmeup.revmeup.ui.main.contests;
 
 
@@ -100,7 +102,7 @@ public class HomeActivity extends AppCompatActivity {
                             break;
 
                         case R.id.nav_contest:
-                            //startActivity(new Intent(HomeActivity.this, contests.class));
+                            startActivity(new Intent(HomeActivity.this, Contests.class));
                             break;
 
                         case R.id.nav_add_post:
