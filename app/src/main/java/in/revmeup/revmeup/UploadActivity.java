@@ -39,7 +39,7 @@ public class UploadActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_upload);
-        /*btnChoose = (Button) findViewById(R.id.btnChoose);
+        btnChoose = (Button) findViewById(R.id.btnChoose);
         btnUpload = (Button) findViewById(R.id.btnUpload);
         imageView = (ImageView) findViewById(R.id.imgView);
         btnChoose.setOnClickListener(new View.OnClickListener() {
@@ -111,6 +111,6 @@ public class UploadActivity extends AppCompatActivity {
                             progressDialog.setMessage("Uploaded "+(int)progress+"%");
                         }
                     });
-        }*/
+        }
     }
 }
